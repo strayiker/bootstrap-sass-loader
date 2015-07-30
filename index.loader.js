@@ -1,9 +1,5 @@
-var logger = require('./logger');
-
-module.exports = function() {
-};
-
-module.exports.pitch = function(remainingRequest) {
+module.exports = function () {};
+module.exports.pitch = function (remainingRequest) {
   var result;
   var jsLoaderCommand;
   var styleLoaderCommand;
@@ -11,10 +7,9 @@ module.exports.pitch = function(remainingRequest) {
   var config;
   var msg;
 
-  // Webpack 1.7.3 uses this.resourcePath. Leaving in remaining request for possibly older versions
-  // of Webpack
-  var configFilePath = this.resourcePath || remainingRequest;
   this.cacheable(true);
+
+  var configFilePath = this.resourcePath || remainingRequest;
 
   if (!configFilePath || configFilePath.trim() === '') {
     msg = 'You specified the bootstrap-sass-loader with no configuration file. Please specify' +
@@ -25,8 +20,7 @@ module.exports.pitch = function(remainingRequest) {
   }
 
   config = require(configFilePath);
-  styleLoader = config.styleLoader || 'style-loader!css-loader!sass-loader';
-  logger.verbose(config, 'styleLoader: %s', styleLoader);
+  styleLoader = config.styleLoader || 'style!css!sass';
 
   styleLoaderCommand = 'require(' + JSON.stringify('-!' + styleLoader + '!' +
       require.resolve('./bootstrap-sass-styles.loader.js') + '!' + configFilePath) + ');';

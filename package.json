@@ -2,31 +2,36 @@
   "name": "bootstrap-sass-loader",
   "description": "bootstrap-sass package for webpack",
   "main": "index.js",
-  "version": "1.0.7",
+  "version": "1.0.0",
   "loader": "index.loader.js",
   "keywords": [
     "bootstrap",
     "webpack",
     "sass"
   ],
-  "author": {
-    "name": "Justin Gordon <justin.gordon@gmail.com>"
-  },
+  "author": "Kirill Mesnyankin <sadbox.games@gmail.com>",
   "bugs": {
-    "url": "https://github.com/justin808/bootstrap-sass-loader/issues"
+    "url": "https://github.com/strayiker/bootstrap-sass-loader/issues"
   },
-  "dendendencies": {},
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/justin808/bootstrap-sass-loader.git"
-  },
-  "peerDependencies": {
-    "bootstrap-sass": "*",
+  "dependencies": {
     "css-loader": "*",
     "sass-loader": "*",
     "style-loader": "*",
     "url-loader": "*",
     "file-loader": "*"
-  }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strayiker/bootstrap-sass-loader.git"
+  },
+  "peerDependencies": {
+    "bootstrap-sass": "*"
+  },
+  "homepage": "https://github.com/strayiker/bootstrap-sass-loader",
+  "scripts": {},
+  "maintainers": [
+    "Kirill Mesnyankin <sadbox.games@gmail.com>"
+  ],
+  "directories": {}
 }

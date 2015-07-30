@@ -13,23 +13,16 @@ var scripts = [
   'affix'
 ];
 
-var bootstrapSassPath = require('./bootstrapSassPath');
-var path = require('path');
-
-module.exports = function() {
-};
-
-
-// Create a list of require('path/to/boostrap.js');
-module.exports.pitch = function(configPath) {
-  var pathToBootstrapSass = bootstrapSassPath.getPath(this.context);
-  var config = require(configPath);
+module.exports = function () {};
+module.exports.pitch = function (configPath) {
   this.cacheable(true);
-  return scripts.filter(function(script) {
+
+  var config = require(configPath);
+  var scriptsPath = 'bootstrap-sass/assets/javascripts/bootstrap/';
+
+  return scripts.filter(function (script) {
     return config.scripts[script];
-  }).map(function(script) {
-    var pathToBootstrapJsFile = JSON.stringify(path.join(pathToBootstrapSass, 'javascripts',
-        'bootstrap', script));
-    return 'require(' + pathToBootstrapJsFile + ');';
+  }).map(function (script) {
+    return 'require(' + JSON.stringify(scriptsPath + script) + ');';
   }).join('\n');
 };
